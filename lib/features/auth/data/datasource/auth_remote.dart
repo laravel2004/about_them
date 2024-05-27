@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:them/core/constants/constants.dart';
 import 'package:them/core/resource/data_state.dart';
 import 'package:them/features/auth/data/model/token.dart';
@@ -48,6 +49,8 @@ class AuthRemote {
 
       if(response.statusCode == 200) {
         final token = TokenModel.fromJson(json.decode(response.body));
+        SharedPreferences prefs = await SharedPreferences.getInstance();
+        prefs.setString('token', token.token!);
         return DataSuccess(token);
       }
       else {
