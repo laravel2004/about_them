@@ -31,11 +31,12 @@ class MoodGetModel extends MoodlGet {
   });
 
   factory MoodGetModel.fromJson(Map<String, dynamic> json) {
-    return MoodGetModel(
-      mood: json['data']['mood'] ?? '',
-      date: json['data']['date'] ?? '',
-    );
-  }
+  final mood = json['data']['mood'] ?? '';
+  return MoodGetModel(
+    mood: mood.toString(),
+    date: json['data']['date'] ?? '',
+  );
+}
 
   factory MoodGetModel.fromEntity(MoodlGet mood) {
     return MoodGetModel(

@@ -13,7 +13,10 @@ class AuthRemote {
     try{
       final response = await http.post(
         Uri.parse('$URL/register'),
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
         body:  json.encode({
           'name' : user.name,
           'email' : user.email,
@@ -40,9 +43,12 @@ class AuthRemote {
     try{
       final response = await http.post(
         Uri.parse('$URL/login'),
-        headers: {'Content-Type': 'application/json'},
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
         body: json.encode({
-          "name" : user.email,
+          "email" : user.email,
           "password" : user.password
         })
       );

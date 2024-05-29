@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 class Mood extends Equatable{
-  final int? mood;
+  final String? mood;
   final String? note;
   final String? date;
 

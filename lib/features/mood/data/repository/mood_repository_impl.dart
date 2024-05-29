@@ -1,7 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:them/core/resource/data_state.dart';
 import 'package:them/features/mood/data/datasource/mood_remote.dart';
-import 'package:them/features/mood/data/model/mood_model.dart';
 import 'package:them/features/mood/domain/entities/mood.dart';
 import 'package:them/features/mood/domain/repositories/mood_repository.dart';
 
